@@ -76,8 +76,7 @@ export class Roomsearch implements OnInit {
     console.log('formattedEndDate: ' + endDateStr);
     console.log('roomType: ' + this.roomType);
 
-    this.api
-      .getAvailableRooms(startDateStr, endDateStr, this.roomType)
+    this.api.getAvailableRooms(startDateStr, endDateStr, this.roomType)
       .subscribe({
         next: (resp: any) => {
           if (resp.rooms.length === 0) {

@@ -1,0 +1,42 @@
+/* Global Font & Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+body {
+  background-color: #f8f9fb;
+  color: #2e3a46;
+  line-height: 1.6;
+}
+
+/* Color Palette */
+:root {
+  --primary: #1e88e5;   /* Blue */
+  --secondary: #607d8b; /* Gray */
+  --light: #ffffff;     /* White */
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Utility classes */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem 0;
+}
+
+.card {
+  background: var(--light);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--shadow);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px var(--shadow);
+}

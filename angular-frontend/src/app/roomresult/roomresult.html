@@ -1,29 +1,38 @@
-<!-- room-result.component.html -->
-<section>
-    <div *ngIf="roomSearchResults && roomSearchResults.length > 0">
-      <div
-        *ngFor="let room of roomSearchResults"
-        class="item"
-        [attr.key]="room.id"
-      >
-        <img [src]="imageBaseUrl + room.imageUrl" [alt]="room.roomNumber" />
-  
-        <div class="details">
-          <h3>{{ room.type }}</h3>
-          <p>Price: ${{ room.pricePerNight }}/Night</p>
-          <p>Description: {{ room.description }}</p>
-        </div>
-  
-        <div class="book-now">
-          <!-- Conditionally render button based on admin status -->
-          <button *ngIf="isAdmin" (click)="navigateToEditRoom(room.id)">
-            Edit Room
+<section class="rooms-grid">
+  <ng-container *ngIf="roomSearchResults && roomSearchResults.length > 0">
+    <div
+      *ngFor="let room of roomSearchResults"
+      class="room-card"
+      [attr.key]="room.id"
+    >
+      <div class="room-card-image-container">
+        <img
+          class="room-card-image"
+          [src]="imageBaseUrl + room.imageUrl"
+          [alt]="room.type"
+        />
+      </div>
+      <div class="room-card-content">
+        <h3>{{ room.type }}</h3>
+        <p class="price">${{ room.pricePerNight }}/Night</p>
+        <p class="description">{{ room.description }}</p>
+        <div class="room-card-actions">
+          <button
+            *ngIf="!isAdmin"
+            class="btn btn-primary"
+            (click)="navigateToRoomDetails(room.id)"
+          >
+            View & Book Now
           </button>
-          <button *ngIf="!isAdmin" (click)="navigateToRoomDetails(room.id)">
-            View/Book Now
+          <button
+            *ngIf="isAdmin"
+            class="btn btn-secondary"
+            (click)="navigateToEditRoom(room.id)"
+          >
+            Edit Room
           </button>
         </div>
       </div>
     </div>
-  </section>
-  
+  </ng-container>
+</section>

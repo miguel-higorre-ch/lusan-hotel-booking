@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-update-booking',
   imports: [CommonModule, FormsModule],
   templateUrl: './update-booking.html',
-  styleUrl: './update-booking.css',
+  styleUrl: '../admin-forms.css',
 })
 export class UpdateBooking {
   bookingCode: string = ''; // Booking reference from the URL

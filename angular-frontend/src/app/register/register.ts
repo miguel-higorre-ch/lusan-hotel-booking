@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-register',
   imports: [CommonModule, FormsModule, RouterLink],
   templateUrl: './register.html',
-  styleUrl: './register.css',
+  styleUrl: '../auth.css',
 })
 export class Register {
   constructor(private api: Api, private router: Router) {}

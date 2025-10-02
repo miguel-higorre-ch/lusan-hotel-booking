@@ -1,58 +1,47 @@
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: left;
-    align-items: center;
-    margin-bottom: 10px;
-    padding: 20px;
-    margin-left: 45px;
+.search-container {
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  margin-top: -5rem;
+  position: relative;
+  z-index: 10;
 }
 
-
-.field {
-    flex: 0 0 calc(25% - 10px);
-    margin: 10px;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.search-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  align-items: end;
 }
 
-
-.field label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #666;
+.search-button-wrapper {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  padding-left: 0.3rem;
+  padding-top: 0.7rem;
 }
 
-
-.field input,
-.field select {
-    width: 80%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 16px;
+.search-button-wrapper .btn {
+  width: 100%;
+  /* align-self: flex-end; */
+  /* align-self: center; */
 }
 
-
-
-button {
-    margin-left: 10px;
-    padding: 15px 20px;
-    background-color: #007F86;
-    font-weight: 600;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
+.error {
+  color: #d9534f;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  padding: 1rem;
+  border: 1px solid transparent;
+  border-radius: var(--border-radius);
+  margin-bottom: 1.5rem;
+  text-align: center;
 }
 
-
-button:hover {
-    background-color: rgb(34, 80, 128)
+@media (max-width: 768px) {
+  .search-form {
+    grid-template-columns: 1fr;
+  }
 }

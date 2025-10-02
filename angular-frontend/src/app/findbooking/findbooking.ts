@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-findbooking',
   imports: [CommonModule, FormsModule],
   templateUrl: './findbooking.html',
-  styleUrl: './findbooking.css'
+  styleUrl: '../admin/admin-forms.css'
 })
 export class Findbooking {
 

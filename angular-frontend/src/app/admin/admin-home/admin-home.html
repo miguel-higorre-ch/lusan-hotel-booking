@@ -1,12 +1,26 @@
-<div class="admin">
-    <!-- Show error message if any -->
-    <p *ngIf="error" class="error">{{ error }}</p>
+<div class="container admin-container">
+  <div class="admin-header">
     <h1>Welcome, {{ adminName }}</h1>
-    <div class="actions">
-      <button (click)="navigateToManageRooms()">Manage Rooms</button>
-      <button (click)="navigateToManageBookings()">Manage Bookings</button>
-      <button (click)="navigateToAdminRegister()">Admin Register</button>
-    </div>
-  
+    <p>Select an option below to manage the hotel's operations.</p>
   </div>
-  
+
+  <p *ngIf="error" class="error">{{ error }}</p>
+
+  <div class="actions-grid">
+    <div class="action-card" (click)="navigateToManageRooms()">
+      <i class="fas fa-door-open icon"></i>
+      <h3>Manage Rooms</h3>
+      <p>Add, edit, or remove hotel rooms.</p>
+    </div>
+    <div class="action-card" (click)="navigateToManageBookings()">
+      <i class="fas fa-book-open icon"></i>
+      <h3>Manage Bookings</h3>
+      <p>View and update guest reservations.</p>
+    </div>
+    <div class="action-card" (click)="navigateToAdminRegister()">
+      <i class="fas fa-user-plus icon"></i>
+      <h3>Admin Register</h3>
+      <p>Create new administrator accounts.</p>
+    </div>
+  </div>
+</div>

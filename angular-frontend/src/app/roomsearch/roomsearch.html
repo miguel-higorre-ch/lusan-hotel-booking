@@ -1,39 +1,46 @@
-<!-- Error Message -->
-<p *ngIf="error" class="error">{{ error }}</p>
-<div class="container">
-  <!-- Check-in Date Picker -->
-  <div class="field">
-    <label>Check-in Date</label>
-    <input
-      type="date"
-      [(ngModel)]="startDate"
-      [min]="minDate"
-      placeholder="Select Check-In Date"
-    />
-  </div>
-
-  <!-- Check-out Date Picker -->
-  <div class="field">
-    <label>Check-Out Date</label>
-    <input
-      type="date"
-      [(ngModel)]="endDate"
-      [min]="startDate"
-      placeholder="Select Check-Out Date"
-    />
-  </div>
-
-  <!-- Room Type Selection -->
-  <div class="field">
-    <label>Room Type</label>
-    <select [(ngModel)]="roomType">
-      <option disabled value="">Select Room Type</option>
-      <option *ngFor="let type of roomTypes" [value]="type">
-        {{ type }}
-      </option>
-    </select>
-  </div>
-
-  <!-- Search Button -->
-  <button (click)="handleSearch()">Search Rooms</button>
+<div class="search-container">
+  <p *ngIf="error" class="error">{{ error }}</p>
+  <form class="search-form">
+    <div class="form-group">
+      <label for="checkin">Check-in Date</label>
+      <input
+        id="checkin"
+        type="date"
+        class="form-control"
+        [(ngModel)]="startDate"
+        [min]="minDate"
+        name="startDate"
+      />
+    </div>
+    <div class="form-group">
+      <label for="checkout">Check-out Date</label>
+      <input
+        id="checkout"
+        type="date"
+        class="form-control"
+        [(ngModel)]="endDate"
+        [min]="startDate"
+        name="endDate"
+      />
+    </div>
+    <div class="form-group">
+      <label for="roomType">Room Type</label>
+      <select
+        id="roomType"
+        class="form-control"
+        [(ngModel)]="roomType"
+        name="roomType"
+      >
+        <option disabled value="">Select Room Type</option>
+        <option *ngFor="let type of roomTypes" [value]="type">
+          {{ type }}
+        </option>
+      </select>
+    </div>
+    <div class="search-button-wrapper">
+      <button type="button" class="btn btn-primary" (click)="handleSearch()">
+        Search Rooms
+      </button>
+    </div>
+  </form>
 </div>

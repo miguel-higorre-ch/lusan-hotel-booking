@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-add-room',
   imports: [CommonModule, FormsModule],
   templateUrl: './add-room.html',
-  styleUrl: './add-room.css'
+  styleUrl: '../admin-forms.css'
 })
 export class AddRoom {
 

@@ -1,25 +1,38 @@
-<div>
+<div class="auth-container">
+  <div class="card auth-card">
     <h2>Login</h2>
     <p *ngIf="error" class="error">{{ error }}</p>
-  
-    <form (ngSubmit)="handleSubmit()">
-      <input
-        type="email"
-        placeholder="email"
-        [(ngModel)]="formData.email"
-        name="email"
-        required
-      />
-      <input
-        type="password"
-        placeholder="password"
-        [(ngModel)]="formData.password"
-        name="password"
-        required
-      />
-  
-      <button type="submit">Login</button>
+
+    <form class="auth-form" (ngSubmit)="handleSubmit()">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          class="form-control"
+          placeholder="your@email.com"
+          [(ngModel)]="formData.email"
+          name="email"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          id="password"
+          type="password"
+          class="form-control"
+          placeholder="Password"
+          [(ngModel)]="formData.password"
+          name="password"
+          required
+        />
+      </div>
+
+      <button type="submit" class="btn btn-primary">Login</button>
     </form>
-    <p>Don't have an account? <a routerLink="/register">Register</a></p>
+    <div class="auth-footer">
+      <p>Don't have an account? <a routerLink="/register">Register</a></p>
+    </div>
   </div>
-  
+</div>

@@ -1,0 +1,26 @@
+.admin-table-container {
+  padding: 2rem;
+}
+
+.admin-table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.admin-table-header h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.table-actions a,
+.table-actions button {
+  margin-right: 0.5rem;
+  text-decoration: none;
+}
+
+.table-actions .btn-sm {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+}

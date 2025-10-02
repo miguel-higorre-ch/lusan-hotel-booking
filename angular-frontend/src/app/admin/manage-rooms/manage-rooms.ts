@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   selector: 'app-manage-rooms',
   imports: [CommonModule, FormsModule, Roomresult, Pagination],
   templateUrl: './manage-rooms.html',
-  styleUrl: './manage-rooms.css'
+  styleUrl: '../admin-tables.css'
 })
 export class ManageRooms {
 

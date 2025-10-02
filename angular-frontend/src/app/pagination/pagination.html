@@ -1,7 +1,7 @@
 <div>
     <ul>
         <li *ngFor="let number of pageNumbers">
-            <button
+            <button class="btn btn-primary"
                 (click)="onPageChange(number)"
                 [ngClass]="{
                     'page-button': true,

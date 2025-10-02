@@ -1,73 +1,92 @@
-<div class="container">
-    <h2>Add New Room</h2>
-    <!-- Error and Success messages -->
+<div class="container admin-form-container">
+  <div class="card">
+    <div class="admin-form-header">
+      <h2>Add New Room</h2>
+    </div>
     <div *ngIf="error" class="error">{{ error }}</div>
     <div *ngIf="success" class="success">{{ success }}</div>
-  
-    <!-- Room Details Form -->
-    <div class="room-form">
-      <!-- Room Image Upload -->
+
+    <form class="room-form">
       <div class="form-group">
-        <div *ngIf="preview">
+        <label for="roomPhoto">Room Image</label>
+        <div *ngIf="preview" class="image-preview">
           <img [src]="preview" alt="Room Preview" />
         </div>
-        <input type="file" name="roomPhoto" (change)="handleFileChange($event)" />
+        <input
+          id="roomPhoto"
+          type="file"
+          class="form-control"
+          name="roomPhoto"
+          (change)="handleFileChange($event)"
+        />
       </div>
-  
-      <!-- Room Type -->
+
       <div class="form-group">
-        <label>Room Type</label>
-        <select [(ngModel)]="roomDetails.type" (change)="handleRoomTypeChange($event)">
+        <label for="roomType">Room Type</label>
+        <select
+          id="roomType"
+          class="form-control"
+          [(ngModel)]="roomDetails.type"
+          (change)="handleRoomTypeChange($event)"
+          name="type"
+        >
           <option value="">Select a room type</option>
-          <option *ngFor="let type of roomTypes" [value]="type">{{ type }}</option>
+          <option *ngFor="let type of roomTypes" [value]="type">
+            {{ type }}
+          </option>
         </select>
       </div>
-  
-      <!-- Room Price -->
+
       <div class="form-group">
-        <label>Room Price</label>
+        <label for="pricePerNight">Room Price</label>
         <input
+          id="pricePerNight"
           type="number"
+          class="form-control"
           name="pricePerNight"
           [(ngModel)]="roomDetails.pricePerNight"
           (input)="handleChange($event)"
         />
       </div>
-  
-      <!-- Room Number -->
+
       <div class="form-group">
-        <label>Room Number</label>
+        <label for="roomNumber">Room Number</label>
         <input
+          id="roomNumber"
           type="number"
+          class="form-control"
           name="roomNumber"
           [(ngModel)]="roomDetails.roomNumber"
           (input)="handleChange($event)"
         />
       </div>
-  
-      <!-- Room Capacity -->
+
       <div class="form-group">
-        <label>Room Capacity</label>
+        <label for="capacity">Room Capacity</label>
         <input
+          id="capacity"
           type="number"
+          class="form-control"
           name="capacity"
           [(ngModel)]="roomDetails.capacity"
           (input)="handleChange($event)"
         />
       </div>
-  
-      <!-- Room Description -->
+
       <div class="form-group">
-        <label>Room Description</label>
+        <label for="description">Room Description</label>
         <textarea
+          id="description"
+          class="form-control"
           name="description"
           [(ngModel)]="roomDetails.description"
           (input)="handleChange($event)"
         ></textarea>
       </div>
-  
-      <!-- Submit Button -->
-      <button (click)="addRoom()">Add Room</button>
-    </div>
+
+      <button type="button" class="btn btn-primary" (click)="addRoom()">
+        Add Room
+      </button>
+    </form>
   </div>
-  
+</div>

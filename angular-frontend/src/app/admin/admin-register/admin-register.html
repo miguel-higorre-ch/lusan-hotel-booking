@@ -1,59 +1,85 @@
-<div>
-    <h2>Register</h2>
+<div class="container admin-form-container">
+  <div class="card">
+    <div class="admin-form-header">
+      <h2>Register New Admin</h2>
+    </div>
     <p *ngIf="message" class="error">{{ message }}</p>
-    
+
     <form (ngSubmit)="handleSubmit()">
-      <input
-        type="text"
-        placeholder="First Name ..."
-        [(ngModel)]="formData.firstName"
-        name="firstName"
-        required
-      />
-      <input
-        type="text"
-        placeholder="Last Name ..."
-        [(ngModel)]="formData.lastName"
-        name="lastName"
-        required
-      />
-      <input
-        type="email"
-        placeholder="Email ..."
-        [(ngModel)]="formData.email"
-        name="email"
-        required
-      />
-      <input
-        type="password"
-        placeholder="Password ..."
-        [(ngModel)]="formData.password"
-        name="password"
-        required
-      />
-      <input
-        type="tel"
-        placeholder="Phone Number here ..."
-        [(ngModel)]="formData.phoneNumber"
-        name="phoneNumber"
-        required
-      />
-      <input
-        type="text"
-        placeholder="Role ..."
-        [(ngModel)]="formData.role"
-        name="role"
-        required
-      />
-  
-      <button type="submit">Register</button>
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input
+          id="firstName"
+          type="text"
+          class="form-control"
+          placeholder="First Name"
+          [(ngModel)]="formData.firstName"
+          name="firstName"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input
+          id="lastName"
+          type="text"
+          class="form-control"
+          placeholder="Last Name"
+          [(ngModel)]="formData.lastName"
+          name="lastName"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          class="form-control"
+          placeholder="Email"
+          [(ngModel)]="formData.email"
+          name="email"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          id="password"
+          type="password"
+          class="form-control"
+          placeholder="Password"
+          [(ngModel)]="formData.password"
+          name="password"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="phoneNumber">Phone Number</label>
+        <input
+          id="phoneNumber"
+          type="tel"
+          class="form-control"
+          placeholder="Phone Number"
+          [(ngModel)]="formData.phoneNumber"
+          name="phoneNumber"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="role">Role</label>
+        <input
+          id="role"
+          type="text"
+          class="form-control"
+          placeholder="Role"
+          [(ngModel)]="formData.role"
+          name="role"
+          required
+        />
+      </div>
+
+      <button class="btn btn-primary" type="submit">Register</button>
     </form>
-    <p>
-      Already have an account?<a
-        routerLink="/login"
-        routerLinkActive="router-link-active"
-        >Login</a
-      >
-    </p>
   </div>
-  
+</div>

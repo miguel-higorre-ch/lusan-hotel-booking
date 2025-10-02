@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-edit-room',
   imports: [CommonModule, FormsModule],
   templateUrl: './edit-room.html',
-  styleUrl: './edit-room.css',
+  styleUrl: '../admin-forms.css',
 })
 export class EditRoom {
   roomDetails = {

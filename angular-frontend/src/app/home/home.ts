@@ -13,7 +13,7 @@ export class Home {
   searchResults: any[] = []; // store the results of the search room
 
   // handle the result coming from the search room
-  handleSearchResult(results:any){
+  handleSearchResult(results:any[]){
     this.searchResults = results;
   }
 

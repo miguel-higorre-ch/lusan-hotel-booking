@@ -24,9 +24,9 @@ export const routes: Routes = [
     {path: 'register', component: Register},
     {path: 'profile', component: Profile, canActivate: [Guard]},
     {path: 'edit-profile', component: Editprofile, canActivate: [Guard]},
-    {path: 'home', component: Home},
-    {path: 'rooms', component: Rooms},
-    {path: 'find-booking', component: Findbooking, canActivate: [Guard]},
+    {path: 'home', component: Home, data: {animation: 'home'}},
+    {path: 'rooms', component: Rooms, data: {animation: 'rooms'}},
+    {path: 'find-booking', component: Findbooking, canActivate: [Guard], data: {animation: 'find-booking'}},
     {path: 'room-details/:id', component: Roomdetails, canActivate: [Guard]},
     
     //PAYMENT ROUTES
@@ -35,7 +35,7 @@ export const routes: Routes = [
     {path: 'payment-failure/:bookingReference', component:PaymentFailure, canActivate: [Guard]},
 
     //ADMIN ROUTES
-    {path: 'admin', component: AdminHome, canActivate: [Guard], data: {requiresAdmin: true}},
+    {path: 'admin', component: AdminHome,  canActivate: [Guard], data: {requiresAdmin: true, animation: 'admin'}},
     {path: 'admin/manage-rooms', component: ManageRooms, canActivate: [Guard], data: {requiresAdmin: true}},
     {path: 'admin/add-room', component: AddRoom, canActivate: [Guard], data: {requiresAdmin: true}},
     {path: 'admin/edit-room/:id', component: EditRoom, canActivate: [Guard], data: {requiresAdmin: true}},

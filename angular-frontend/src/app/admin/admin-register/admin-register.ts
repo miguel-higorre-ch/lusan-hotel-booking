@@ -8,7 +8,7 @@ import { RouterLink, Router } from '@angular/router';
   selector: 'app-admin-register',
   imports: [CommonModule, FormsModule, RouterLink],
   templateUrl: './admin-register.html',
-  styleUrl: './admin-register.css',
+  styleUrl: '../admin-forms.css',
 })
 export class AdminRegister {
   constructor(private api: Api, private router: Router) {}

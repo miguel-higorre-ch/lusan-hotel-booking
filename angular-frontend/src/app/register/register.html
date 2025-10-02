@@ -1,47 +1,75 @@
-<div>
+<div class="auth-container">
+  <div class="card auth-card">
     <h2>Register</h2>
-    
+
     <p *ngIf="error" class="error">{{ error }}</p>
-  
-    <form (ngSubmit)="handleSubmit()">
-      <input
-        type="text"
-        placeholder="first name"
-        [(ngModel)]="formData.firstName"
-        name="firstName"
-        required
-      />
-      <input
-        type="text"
-        placeholder="last name"
-        [(ngModel)]="formData.lastName"
-        name="lastName"
-        required
-      />
-      <input
-        type="email"
-        placeholder="email"
-        [(ngModel)]="formData.email"
-        name="email"
-        required
-      />
-      <input
-        type="password"
-        placeholder="password"
-        [(ngModel)]="formData.password"
-        name="password"
-        required
-      />
-      <input
-        type="tel"
-        placeholder="phone number"
-        [(ngModel)]="formData.phoneNumber"
-        name="phoneNumber"
-        required
-      />
-  
-      <button type="submit">Register</button>
+
+    <form class="auth-form" (ngSubmit)="handleSubmit()">
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input
+          id="firstName"
+          type="text"
+          class="form-control"
+          placeholder="John"
+          [(ngModel)]="formData.firstName"
+          name="firstName"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input
+          id="lastName"
+          type="text"
+          class="form-control"
+          placeholder="Doe"
+          [(ngModel)]="formData.lastName"
+          name="lastName"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          class="form-control"
+          placeholder="your@email.com"
+          [(ngModel)]="formData.email"
+          name="email"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          id="password"
+          type="password"
+          class="form-control"
+          placeholder="Password"
+          [(ngModel)]="formData.password"
+          name="password"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="phoneNumber">Phone Number</label>
+        <input
+          id="phoneNumber"
+          type="tel"
+          class="form-control"
+          placeholder="(123) 456-7890"
+          [(ngModel)]="formData.phoneNumber"
+          name="phoneNumber"
+          required
+        />
+      </div>
+
+      <button type="submit" class="btn btn-primary">Register</button>
     </form>
-    <p>Already have an account? <a routerLink="/login">Login</a></p>
+    <div class="auth-footer">
+      <p>Already have an account? <a routerLink="/login">Login</a></p>
+    </div>
   </div>
-  
+</div>

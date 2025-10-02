@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-manage-bookings',
   imports: [CommonModule, FormsModule, Pagination],
   templateUrl: './manage-bookings.html',
-  styleUrl: './manage-bookings.css'
+  styleUrl: '../admin-tables.css'
 })
 export class ManageBookings {
 

@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 export class Roomresult {
 
   @Input() roomSearchResults: any[] = []; // Input property for room results
+  
   isAdmin: boolean;
 
   imageBaseUrl = Api.IMAGE_BASE_URL;
@@ -21,6 +22,8 @@ export class Roomresult {
     // Get the current user's admin status
     this.isAdmin = this.api.isAdmin();
   }
+
+  
 
   // Method to navigate to the edit room page (for admins)
   navigateToEditRoom(roomId: string) {
