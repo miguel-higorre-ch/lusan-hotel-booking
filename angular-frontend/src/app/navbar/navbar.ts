@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, HostListener } from '@angular/core';
 import { Api } from '../service/api';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
@@ -6,11 +6,17 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule, RouterLink, RouterLinkActive],
+  imports: [CommonModule, RouterLink],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })
 export class Navbar {
+
+  menuOpen = false;
+  isSticky = false;
+
+  
+
   isMenuOpen = signal(false);
 
   constructor(private router: Router, private api: Api) {}
@@ -37,5 +43,10 @@ export class Navbar {
 
   toggleMenu(): void {
     this.isMenuOpen.update((value) => !value);
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.isSticky = window.scrollY > 0;
   }
 }

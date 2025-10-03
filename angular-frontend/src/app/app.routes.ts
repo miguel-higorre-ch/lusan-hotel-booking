@@ -18,6 +18,9 @@ import { EditRoom } from './admin/edit-room/edit-room';
 import { ManageBookings } from './admin/manage-bookings/manage-bookings';
 import { UpdateBooking } from './admin/update-booking/update-booking';
 import { AdminRegister } from './admin/admin-register/admin-register';
+import { About } from './about/about';
+import { Testimonials } from './testimonials/testimonials';
+import { Gallery } from './gallery/gallery';
 
 export const routes: Routes = [
     {path: 'login', component: Login},
@@ -28,6 +31,9 @@ export const routes: Routes = [
     {path: 'rooms', component: Rooms, data: {animation: 'rooms'}},
     {path: 'find-booking', component: Findbooking, canActivate: [Guard], data: {animation: 'find-booking'}},
     {path: 'room-details/:id', component: Roomdetails, canActivate: [Guard]},
+    {path: 'about', component: About, data: {animation: 'about'}},
+    {path: 'testimonials', component: Testimonials, data: {animation: 'testimonials'}},
+    {path: 'gallery', component: Gallery, data: {animation: 'gallery'}},
     
     //PAYMENT ROUTES
     {path: 'payment/:bookingReference/:amount', component:PaymentPage, canActivate: [Guard]},

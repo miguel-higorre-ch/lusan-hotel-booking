@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   selector: 'app-profile',
   imports: [CommonModule],
   templateUrl: './profile.html',
-  styleUrl: './profile.css'
+  styleUrl: '../admin/admin-forms.css'
 })
 export class Profile {
 

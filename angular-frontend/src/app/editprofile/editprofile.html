@@ -1,18 +1,36 @@
-<div class="profile">
-    <h2>Edit Profile</h2>
-  
-    <!-- Error Message -->
-    <p *ngIf="error" class="error">{{ error }}</p>
-  
-    <!-- User Profile Details -->
-    <div *ngIf="user">
-      <p><strong>First Name:</strong> {{ user.firstName }}</p>
-      <p><strong>Last Name:</strong> {{ user.lastName }}</p>
-      <p><strong>Email:</strong> {{ user.email }}</p>
-      <p><strong>Phone Number:</strong> {{ user.phoneNumber }}</p>
-  
-      <!-- Button to delete account -->
-      <button (click)="handleDeleteProfile()">Delete My Account</button>
+<div class="container admin-form-container">
+  <div class="card">
+    <div class="admin-form-header">
+      <h2>Edit Profile</h2>
     </div>
+
+    @if (error) {
+    <p class="error text-center">{{ error }}</p>
+    } @if (user) {
+    <div class="profile-details">
+      <div class="form-group">
+        <label>First Name</label>
+        <p class="form-control-static">{{ user.firstName }}</p>
+      </div>
+      <div class="form-group">
+        <label>Last Name</label>
+        <p class="form-control-static">{{ user.lastName }}</p>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <p class="form-control-static">{{ user.email }}</p>
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <p class="form-control-static">{{ user.phoneNumber }}</p>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <button class="btn btn-danger" (click)="handleDeleteProfile()">Delete My Account</button>
+    </div>
+    } @else {
+    <p class="text-center">Loading user data...</p>
+    }
   </div>
-  
+</div>

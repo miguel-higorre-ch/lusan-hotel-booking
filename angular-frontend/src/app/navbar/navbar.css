@@ -1,14 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
-
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-html,
 body {
   font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
@@ -48,9 +46,9 @@ a {
   height: 30px;
   border-radius: 50%;
   line-height: 30px;
-  background: #FAF3E7;
+  background: #faf3e7;
   text-align: center;
-  color: #CC8C18;
+  color: #cc8c18;
 }
 
 .head img {
@@ -60,9 +58,10 @@ a {
 /*-------------head--------- */
 /*-------------header--------- */
 header {
-  background: #CC8C18;
+  background: #cc8c18;
   padding: 15px 0 15px 0;
   color: white;
+  transition: all 0.4s ease-in-out;
 }
 
 .navbar {
@@ -89,15 +88,24 @@ header {
   align-items: center;
 }
 
-header ul {
-  padding: 0 20px 0 0;
-}
-
-header li {
+/* Updated button styles to match li */
+.nav-menu button {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 15px;
+  background-color: inherit;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: 0.5s;
+  padding: 0;
   margin-right: 30px;
 }
 
-header ul li a {
+/* Apply hover effect to both links and buttons */
+header ul li a,
+.nav-menu button {
   font-size: 15px;
   color: white;
   text-transform: uppercase;
@@ -105,8 +113,17 @@ header ul li a {
   transition: 0.5s;
 }
 
-header ul li a:hover {
+header ul li a:hover,
+.nav-menu button:hover {
   color: #000;
+}
+
+header ul {
+  padding: 0 20px 0 0;
+}
+
+header li {
+  margin-right: 30px;
 }
 
 header .head_contact {
@@ -122,10 +139,10 @@ header .head_contact i {
   line-height: 80px;
   text-align: center;
   background: white;
-  color: #CC8C18;
+  color: #cc8c18;
   border-radius: 50%;
   transform: rotate(-45deg);
-  border: 5px solid #ECE3D2;
+  border: 5px solid #ece3d2;
   font-size: 30px;
 }
 
@@ -138,6 +155,8 @@ header.sticky .sticky_logo {
   width: 50px;
   height: 50px;
   margin-top: -10px;
+  background: #fff; /* or your preferred background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 header.sticky {
@@ -152,12 +171,12 @@ header.sticky {
   padding: 30px 0 0 0;
 }
 
-header.sticky ul li a {
+header.sticky ul li a,
+header.sticky .nav-menu button {
   color: white;
 }
 
-@media only screen and (max-width:768px) {
-
+@media only screen and (max-width: 768px) {
   /*------------head------------*/
   .header .head_contact,
   .logo {
@@ -183,11 +202,11 @@ header.sticky ul li a {
     left: -100%;
     top: 11rem;
     flex-direction: column;
-    background: #CC8C18;
+    background: #cc8c18;
     width: 100%;
     border-radius: 10px;
     text-align: center;
-    transition: 0.3s;
+    transition: left 0.3s ease;
     z-index: 99;
   }
 
@@ -195,7 +214,8 @@ header.sticky ul li a {
     top: 5rem;
   }
 
-  header ul li a {
+  header.sticky ul li a,
+  header.sticky .nav-menu button {
     color: white;
   }
 
@@ -207,9 +227,19 @@ header.sticky ul li a {
     margin: 2.5rem 0;
   }
 
+  /* Updated for mobile buttons */
+  .nav-menu button {
+    margin-right: 0;
+    margin: 2.5rem 0;
+  }
+
   .hamburger {
     display: block;
     cursor: pointer;
+  }
+
+  .hamburger .bar {
+    transition: all 0.3s ease;
   }
 
   .hamburger.active .bar:nth-child(2) {

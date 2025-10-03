@@ -1,34 +1,103 @@
-.profile {
-    max-width: 800px;
-    margin: 20px auto auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+:host {
+  --danger-color: #ff4b4b;
+  --danger-hover-color: #e60000;
 }
 
-
-h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #007F86;
+.edit-profile-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  font-family: 'Poppins', sans-serif;
 }
 
-
-button {
-    background-color: #ff4b4b;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    display: block;
-    margin: 20px auto;
+.edit-profile-header {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
+.edit-profile-header h2 {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
 
-button:hover {
-    background-color: #e60000;
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  background-color: var(--white);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(23, 162, 184, 0.2);
+}
+
+.form-control-static {
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background-color: var(--light-gray);
+  margin: 0;
+}
+
+.btn {
+  color: var(--white);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 1rem;
+  font-weight: 600;
+  display: inline-block;
+  width: auto;
+  margin-top: 1rem;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-color-dark);
+  transform: translateY(-2px);
+}
+
+.btn-danger {
+  background-color: var(--danger-color);
+  margin-top: 2rem;
+}
+
+.btn-danger:hover {
+  background-color: var(--danger-hover-color);
+  transform: translateY(-2px);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.error {
+    color: var(--danger-color);
+    margin-bottom: 1rem;
 }
