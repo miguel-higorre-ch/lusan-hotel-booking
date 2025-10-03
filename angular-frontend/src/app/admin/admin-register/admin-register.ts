@@ -6,7 +6,7 @@ import { RouterLink, Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-register',
-  imports: [CommonModule, FormsModule, RouterLink],
+  imports: [CommonModule, FormsModule],
   templateUrl: './admin-register.html',
   styleUrl: '../admin-forms.css',
 })

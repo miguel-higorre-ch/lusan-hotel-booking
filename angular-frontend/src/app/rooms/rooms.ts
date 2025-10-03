@@ -8,7 +8,7 @@ import { Api } from '../service/api';
 
 @Component({
   selector: 'app-rooms',
-  imports: [Pagination, Roomresult, Roomsearch, CommonModule, FormsModule],
+  imports: [Pagination, Roomresult,  CommonModule, FormsModule],
   templateUrl: './rooms.html',
   styleUrl: './rooms.css',
 })

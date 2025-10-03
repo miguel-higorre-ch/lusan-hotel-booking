@@ -33,6 +33,7 @@ a {
 .flex1 {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 /*-------------head--------- */
@@ -51,15 +52,30 @@ a {
   color: #cc8c18;
 }
 
-.head img {
-  margin-top: 10px;
+/* LOGO STYLING - UPDATED */
+.head .logo img,
+.header .logo img {
+  height: 50px; /* Fixed height for consistency */
+  width: auto; /* Maintain aspect ratio */
+  max-width: 180px; /* Prevent logo from being too wide */
+  object-fit: contain; /* Ensure entire logo is visible */
+  transition: all 0.3s ease;
 }
 
-/*-------------head--------- */
+.head .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.head img {
+  margin-top: 0; /* Remove top margin for better alignment */
+}
+
 /*-------------header--------- */
 header {
   background: #cc8c18;
-  padding: 15px 0 15px 0;
+  padding: 15px 0;
   color: white;
   transition: all 0.4s ease-in-out;
 }
@@ -67,6 +83,8 @@ header {
 .navbar {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  position: relative;
 }
 
 .hamburger {
@@ -146,17 +164,25 @@ header .head_contact i {
   font-size: 30px;
 }
 
+/* STICKY HEADER LOGO STYLING */
 header .sticky_logo {
   display: none;
 }
 
 header.sticky .sticky_logo {
-  display: block;
-  width: 50px;
-  height: 50px;
-  margin-top: -10px;
-  background: #fff; /* or your preferred background */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header.sticky .sticky_logo img {
+  width: auto; /* Smaller logo for sticky header */
+  height: auto;
+  /* object-fit: contain; */
+  /* background: #fff; */
+  border-radius: none;
+  /* padding: 2px; */
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
 }
 
 header.sticky {
@@ -165,10 +191,9 @@ header.sticky {
   width: 100%;
   background: #313538;
   transition: 0.5s;
-  height: 12vh;
-  transition: 0.5s;
+  height: 70px; /* Reduced height for sticky header */
   top: 0;
-  padding: 30px 0 0 0;
+  padding: 10px 0; /* Reduced padding */
 }
 
 header.sticky ul li a,
@@ -176,16 +201,32 @@ header.sticky .nav-menu button {
   color: white;
 }
 
+/* Ensure navbar items are properly aligned in sticky mode */
+header.sticky .navbar {
+  height: 50px; /* Match the reduced header height */
+}
+
 @media only screen and (max-width: 768px) {
   /*------------head------------*/
-  .header .head_contact,
-  .logo {
+  .header .head_contact {
     display: none;
+  }
+  
+  /* Show logo in header on mobile */
+  .header .logo {
+    display: flex !important;
+    align-items: center;
+  }
+
+  .head .logo img,
+  .header .logo img {
+    height: 40px; /* Smaller logo on mobile */
+    max-width: 140px;
   }
 
   /*------------head------------*/
   header.sticky {
-    height: 8vh;
+    height: 60px;
   }
 
   header.sticky .nav-menu {
@@ -193,14 +234,15 @@ header.sticky .nav-menu button {
   }
 
   .navbar {
-    height: 5vh;
+    height: auto;
     justify-content: space-between;
+    padding: 0 15px;
   }
 
   .nav-menu {
     position: fixed;
     left: -100%;
-    top: 11rem;
+    top: 70px; /* Adjusted for new header height */
     flex-direction: column;
     background: #cc8c18;
     width: 100%;
@@ -208,10 +250,11 @@ header.sticky .nav-menu button {
     text-align: center;
     transition: left 0.3s ease;
     z-index: 99;
+    padding: 20px 0;
   }
 
   header.sticky .nav-menu {
-    top: 5rem;
+    top: 60px; /* Adjusted for sticky header height */
   }
 
   header.sticky ul li a,
@@ -224,18 +267,20 @@ header.sticky .nav-menu button {
   }
 
   header li {
-    margin: 2.5rem 0;
+    margin: 1.5rem 0;
   }
 
   /* Updated for mobile buttons */
   .nav-menu button {
     margin-right: 0;
-    margin: 2.5rem 0;
+    margin: 1.5rem 0;
+    padding: 10px 20px;
   }
 
   .hamburger {
     display: block;
     cursor: pointer;
+    z-index: 100;
   }
 
   .hamburger .bar {
@@ -252,5 +297,29 @@ header.sticky .nav-menu button {
 
   .hamburger.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* Mobile logo adjustments */
+  header.sticky .sticky_logo img {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .head .logo img,
+  .header .logo img {
+    height: 35px;
+    max-width: 120px;
+  }
+
+  header.sticky .sticky_logo img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .head {
+    height: 8vh;
+    line-height: 8vh;
   }
 }
