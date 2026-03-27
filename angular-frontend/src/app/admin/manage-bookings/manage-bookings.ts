@@ -22,6 +22,8 @@ export class ManageBookings {
   bookingsPerPage: number = 10; // Number of bookings per page
   error:any =null;
 
+  imageBaseUrl = Api.IMAGE_BASE_URL;
+
   constructor(private api: Api, private router: Router) {}
 
   ngOnInit(): void {

@@ -1,0 +1,71 @@
+# Project-wide ignore rules for the Spring Boot + Angular monorepo
+
+# Secrets and local environment files
+.env
+.env.local
+.env.*.local
+!.env.example
+backend/.env
+backend/.env.local
+backend/.env.*.local
+!backend/.env.example
+angular-frontend/.env
+angular-frontend/.env.local
+angular-frontend/.env.*.local
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor and IDE settings
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+*.suo
+*.user
+*.userossc
+*.sln.docstates
+.project
+.classpath
+.settings/
+.history/
+
+# Backend: Spring Boot / Maven
+backend/target/
+backend/out/
+backend/build/
+backend/.mvn/wrapper/maven-wrapper.jar
+backend/.idea
+backend/.mvn
+
+# Frontend: Angular / Node
+angular-frontend/node_modules/
+angular-frontend/dist/
+angular-frontend/.angular/
+angular-frontend/.angular/cache/
+angular-frontend/out-tsc/
+angular-frontend/coverage/
+angular-frontend/tmp/
+angular-frontend/bazel-out/
+
+# Runtime-generated assets
+backend/uploads/
+backend/product-image/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~

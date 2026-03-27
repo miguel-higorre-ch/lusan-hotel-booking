@@ -56,7 +56,7 @@
           </p>
           <p><strong>Capacity:</strong> {{ bookingDetails.room.capacity }}</p>
           <img
-            [src]="bookingDetails.room.imageUrl"
+            [src]="imageBaseUrl + bookingDetails.room.imageUrl"
             alt="Room Image"
             class="room-image"
           />

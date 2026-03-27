@@ -14,6 +14,8 @@ export class UpdateBooking {
   bookingCode: string = ''; // Booking reference from the URL
   bookingDetails: any = null; // Store booking details
 
+  imageBaseUrl = Api.IMAGE_BASE_URL;
+
   formState = {
     id: '',
     bookingStatus: '',
